@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  RedditClient
-//
-//  Created by Anastasiia Lysa on 10.02.2024.
-//
 
 import UIKit
 
