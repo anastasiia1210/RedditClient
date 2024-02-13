@@ -17,9 +17,9 @@ struct Post: Codable{
       self.ups = decoded.data.children.first?.data.ups ?? 0
       self.domain = decoded.data.children.first?.data.domain ?? ""
       self.numComments = decoded.data.children.first?.data.numComments ?? 0
-        if let imageUrl = decoded.data.children.first?.data.preview.images.first?.source.url {
-                    self.image = imageUrl.replacingOccurrences(of: "&amp;", with: "&")
-                } else {self.image = ""}
+       if let imageUrl = decoded.data.children.first?.data.preview.images.first?.source.url {
+                  self.image = imageUrl.replacingOccurrences(of: "&amp;", with: "&")
+               } else {self.image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1280px-Placeholder_view_vector.svg.png"} //default image, no image in post
     }
 }
 
