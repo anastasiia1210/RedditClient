@@ -4,18 +4,12 @@ import SDWebImage
 
 class PostViewController: UIViewController {
 
-    @IBOutlet weak var nameTimeDomain: UILabel!
-    
-    @IBOutlet weak var titleText: UILabel!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var rating: UIButton!
-    
-    @IBOutlet weak var comments: UIButton!
-    
-    @IBOutlet weak var saved: UIButton!
-    
+    @IBOutlet private weak var nameTimeDomain: UILabel!
+    @IBOutlet private weak var titleText: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var rating: UIButton!
+    @IBOutlet private weak var comments: UIButton!
+    @IBOutlet private weak var saved: UIButton!
     
     override func viewDidLoad() {
         
@@ -37,7 +31,6 @@ class PostViewController: UIViewController {
     }
     
      func setupView(_ post: Post) throws{
-         print(post)
          nameTimeDomain.text = "\(post.authorFullname) · 15h · \(post.domain)"
          titleText.text = post.title
          rating.setTitle("\(post.ups + post.downs)", for: .normal)

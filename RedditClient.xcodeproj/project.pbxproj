@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B18C6402B824525003E1D78 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B18C63F2B824525003E1D78 /* PostView.xib */; };
+		3B18C6442B824A65003E1D78 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B18C6432B824A65003E1D78 /* PostView.swift */; };
 		3B6AC6E62B78DCDF008B1E01 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E52B78DCDF008B1E01 /* PostViewController.swift */; };
 		3B6AC6E82B79556C008B1E01 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E72B79556C008B1E01 /* FetchData.swift */; };
 		3B6AC6EA2B7A682F008B1E01 /* DecodedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E92B7A682F008B1E01 /* DecodedPost.swift */; };
 		3B6AC6EE2B7AA4DF008B1E01 /* FetchDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6ED2B7AA4DF008B1E01 /* FetchDataError.swift */; };
+		3B6CB56A2B84E89A00DF7FCF /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CB5692B84E89A00DF7FCF /* PostDetailsViewController.swift */; };
+		3BD3FE712B828A9E007C7D25 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3FE702B828A9E007C7D25 /* PostListViewController.swift */; };
+		3BD3FE732B828B2E007C7D25 /* NavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3FE722B828B2E007C7D25 /* NavigationControllerViewController.swift */; };
+		3BD3FE762B82A6D5007C7D25 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3FE752B82A6D5007C7D25 /* PostTableViewCell.swift */; };
 		3BFB0C9E2B77B28200D0289A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB0C9D2B77B28200D0289A /* AppDelegate.swift */; };
 		3BFB0CA02B77B28200D0289A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB0C9F2B77B28200D0289A /* SceneDelegate.swift */; };
 		3BFB0CA22B77B28200D0289A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB0CA12B77B28200D0289A /* ViewController.swift */; };
@@ -22,10 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B18C63F2B824525003E1D78 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		3B18C6432B824A65003E1D78 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		3B6AC6E52B78DCDF008B1E01 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3B6AC6E72B79556C008B1E01 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		3B6AC6E92B7A682F008B1E01 /* DecodedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodedPost.swift; sourceTree = "<group>"; };
 		3B6AC6ED2B7AA4DF008B1E01 /* FetchDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataError.swift; sourceTree = "<group>"; };
+		3B6CB5692B84E89A00DF7FCF /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		3BD3FE702B828A9E007C7D25 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		3BD3FE722B828B2E007C7D25 /* NavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerViewController.swift; sourceTree = "<group>"; };
+		3BD3FE752B82A6D5007C7D25 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3BFB0C9A2B77B28200D0289A /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFB0C9D2B77B28200D0289A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BFB0C9F2B77B28200D0289A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +75,9 @@
 			children = (
 				3B6AC6E52B78DCDF008B1E01 /* PostViewController.swift */,
 				3BFB0CA12B77B28200D0289A /* ViewController.swift */,
+				3BD3FE702B828A9E007C7D25 /* PostListViewController.swift */,
+				3BD3FE722B828B2E007C7D25 /* NavigationControllerViewController.swift */,
+				3B6CB5692B84E89A00DF7FCF /* PostDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -73,6 +88,16 @@
 				3B6AC6ED2B7AA4DF008B1E01 /* FetchDataError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		3BD3FE742B82A692007C7D25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B18C6432B824A65003E1D78 /* PostView.swift */,
+				3B18C63F2B824525003E1D78 /* PostView.xib */,
+				3BD3FE752B82A6D5007C7D25 /* PostTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3BFB0C912B77B28200D0289A = {
@@ -94,6 +119,7 @@
 		3BFB0C9C2B77B28200D0289A /* RedditClient */ = {
 			isa = PBXGroup;
 			children = (
+				3BD3FE742B82A692007C7D25 /* Views */,
 				3B6AC6EF2B7AA6F7008B1E01 /* Errors */,
 				3B6AC6EC2B7A9ECD008B1E01 /* ViewControllers */,
 				3B6AC6EB2B7A9D9C008B1E01 /* Services */,
@@ -174,6 +200,7 @@
 			files = (
 				3BFB0CAA2B77B28300D0289A /* LaunchScreen.storyboard in Resources */,
 				3BFB0CA72B77B28300D0289A /* Assets.xcassets in Resources */,
+				3B18C6402B824525003E1D78 /* PostView.xib in Resources */,
 				3BFB0CA52B77B28200D0289A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,12 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD3FE732B828B2E007C7D25 /* NavigationControllerViewController.swift in Sources */,
 				3B6AC6EA2B7A682F008B1E01 /* DecodedPost.swift in Sources */,
+				3BD3FE762B82A6D5007C7D25 /* PostTableViewCell.swift in Sources */,
 				3B6AC6E62B78DCDF008B1E01 /* PostViewController.swift in Sources */,
+				3B18C6442B824A65003E1D78 /* PostView.swift in Sources */,
 				3BFB0CA22B77B28200D0289A /* ViewController.swift in Sources */,
 				3B6AC6E82B79556C008B1E01 /* FetchData.swift in Sources */,
 				3BFB0C9E2B77B28200D0289A /* AppDelegate.swift in Sources */,
 				3B6AC6EE2B7AA4DF008B1E01 /* FetchDataError.swift in Sources */,
+				3B6CB56A2B84E89A00DF7FCF /* PostDetailsViewController.swift in Sources */,
+				3BD3FE712B828A9E007C7D25 /* PostListViewController.swift in Sources */,
 				3BFB0CA02B77B28200D0289A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
