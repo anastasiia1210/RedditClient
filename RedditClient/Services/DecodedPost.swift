@@ -1,16 +1,18 @@
 import Foundation
 
 struct Post: Codable{
-    let authorFullname: String
-    let saved: Bool
-    let title: String
-    let downs, ups: Int
-    let domain: String
-    let numComments: Int
-    let image: String //url of image
+    var authorFullname: String
+    var permalink: String
+    var saved: Bool
+    var title: String
+    var downs, ups: Int
+    var domain: String
+    var numComments: Int
+    var image: String //url of image
     
     init(from decoded: DecodedPost) throws {
         self.authorFullname = decoded.data.children.first?.data.authorFullname ?? ""
+        self.permalink = "https://www.reddit.com/\(decoded.data.children.first?.data.permalink ?? "")"
         self.saved = decoded.data.children.first?.data.saved ?? false
         self.title = decoded.data.children.first?.data.title ?? ""
         self.downs = decoded.data.children.first?.data.downs ?? 0
@@ -23,19 +25,20 @@ struct Post: Codable{
     }
     
     init(from child: Child) throws {
-        self.authorFullname = child.data.authorFullname
-        self.saved = child.data.saved
-        self.title = child.data.title
-        self.downs = child.data.downs
-        self.ups = child.data.ups
-        self.domain = child.data.domain
-        self.numComments = child.data.numComments
+        self.authorFullname = child.data.authorFullname ?? "Hidden user"
+        self.permalink = "https://www.reddit.com/\(child.data.permalink ?? "")"
+        self.saved = child.data.saved ?? false
+        self.title = child.data.title ?? ""
+        self.downs = child.data.downs ?? 0
+        self.ups = child.data.ups ?? 0
+        self.domain = child.data.domain ?? "hidden domain"
+        self.numComments = child.data.numComments ?? 0
         if let imageUrl = child.data.preview?.images.first?.source.url {
             self.image = imageUrl.replacingOccurrences(of: "&amp;", with: "&")
         } else {self.image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1280px-Placeholder_view_vector.svg.png"} //default image, no image in post
-        
     }
 }
+
 struct DecodedPost: Codable {
     let data: DecodedPostData
 }
@@ -50,13 +53,14 @@ struct Child: Codable {
 }
 
 struct ChildData: Codable {
-    let authorFullname: String
-    let saved: Bool
-    let title: String
-    let downs, ups: Int
-    let domain: String
+    let authorFullname: String?
+    let permalink: String?
+    let saved: Bool?
+    let title: String?
+    let downs, ups: Int?
+    let domain: String?
     let preview: Preview?
-    let numComments: Int
+    let numComments: Int?
 }
 
 struct Preview: Codable {

@@ -14,7 +14,7 @@ class PostListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        FetchData.fetchData.fetchPosts(subreddit: "ios", parametrs: [("limit", "10")]){
+        FetchData.fetchData.fetchPosts(subreddit: "ios", parametrs: [("limit", "8")]){
             [weak self] values, valueAfter in
             DispatchQueue.main.async {
                 guard let self else {return}
@@ -33,7 +33,7 @@ class PostListViewController: UIViewController {
         case self.identifierForDetails:
             let nextVc = segue.destination as! PostDetailsViewController
             DispatchQueue.main.async {
-                guard let lastSelected = self.lastSelected else {return}
+                guard var lastSelected = self.lastSelected else {return}
                 nextVc.config(lastSelected)
             }
 

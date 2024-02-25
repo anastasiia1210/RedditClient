@@ -1,8 +1,11 @@
 import UIKit
+import SDWebImage
 
 class PostView: UIView {
     
     let kCONTENT_XIB_NAME = "PostView"
+    var url: URL?
+    var post: Post?
     
     @IBOutlet var view: UIView!
     @IBOutlet weak var nameTimeDomain: UILabel!
@@ -15,6 +18,21 @@ class PostView: UIView {
     required init?(coder: NSCoder){
         super.init(coder: coder)
         self.configureView()
+    }
+    
+    @IBAction func shareAction(_ sender: Any) {
+        print(url ?? "emthy")
+        let activityViewController = UIActivityViewController(activityItems: [url ?? "No url"], applicationActivities: nil)
+        takeController().present(activityViewController, animated:true, completion:nil)
+        print("yes")
+    }
+    
+    func takeController() -> UIViewController {
+      var rootViewController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
+      while (rootViewController.presentedViewController != nil) {
+        rootViewController = rootViewController.presentedViewController!
+      }
+      return rootViewController
     }
     
     func setupView() {
@@ -33,6 +51,25 @@ class PostView: UIView {
         return view
     }
     
+    @IBAction func savedAction(_ sender: Any) {
+        print(post?.saved)
+    }
+    
+    func configure(_ post: Post){
+        self.post = post
+        self.url = URL(string: post.permalink)
+        nameTimeDomain.text = "\(post.authorFullname) · 15h · \(post.domain)"
+        titleText.text = post.title
+        rating.setTitle("\(post.ups + post.downs)", for: .normal)
+        comments.setTitle("\(post.numComments)", for: .normal)
+        var nameIcon = ""
+        if post.saved == true{ nameIcon = ".fill" }
+        let savedImage = UIImage(systemName: "bookmark\(nameIcon)")
+        saved.setImage(savedImage, for: .normal)
+        if let imageUrl = URL(string: post.image) {
+            imageView.sd_setImage(with: imageUrl)
+        }
+    }
 }
 
 

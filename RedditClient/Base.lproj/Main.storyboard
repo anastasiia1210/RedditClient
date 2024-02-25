@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7u-bW-8OJ">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-qy-AEi" customClass="PostView" customModule="RedditClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="430" height="350"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="G0i-b5-fMz"/>
@@ -43,22 +43,22 @@
             <objects>
                 <viewController id="37R-Uj-G0y" userLabel="PostViewController" customClass="PostViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oci-W0-OOj">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnF-yz-Yd1">
-                                <rect key="frame" x="0.0" y="303.66666666666669" width="430" height="350.00000000000006"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="350"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name · 15h · i.reddit.it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqH-iJ-COv">
-                                        <rect key="frame" x="5" y="5" width="141.33333333333334" height="34"/>
+                                        <rect key="frame" x="5" y="5" width="141.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-FS-nSb">
-                                        <rect key="frame" x="0.0" y="305.99999999999994" width="430" height="44"/>
+                                        <rect key="frame" x="0.0" y="306" width="320" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYm-ET-7jc">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.33333333333334" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="5sQ-Ab-1eZ"/>
                                                 </constraints>
@@ -69,7 +69,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5H-6H-NGO">
-                                                <rect key="frame" x="143.33333333333331" y="0.0" width="143.33333333333331" height="44"/>
+                                                <rect key="frame" x="106.5" y="0.0" width="107" height="44"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="85">
@@ -77,7 +77,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1c-0b-pIf">
-                                                <rect key="frame" x="286.66666666666669" y="0.0" width="143.33333333333331" height="44"/>
+                                                <rect key="frame" x="213.5" y="0.0" width="106.5" height="44"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Share">
@@ -91,7 +91,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEa-z8-wYh">
-                                        <rect key="frame" x="5" y="45" width="420" height="19.333333333333329"/>
+                                        <rect key="frame" x="5" y="45" width="310" height="19.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="6sR-L1-Z6P"/>
                                         </constraints>
@@ -100,13 +100,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-gJ-xs8">
-                                        <rect key="frame" x="0.0" y="69.3333333333333" width="430" height="236.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="320" height="236.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="IvW-fq-Ffp"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-du-EJo">
-                                        <rect key="frame" x="386" y="0.0" width="44" height="44"/>
+                                        <rect key="frame" x="276" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="747-A5-eCw"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="PRc-J1-0KD"/>
@@ -169,7 +169,7 @@
             <objects>
                 <navigationController id="k7u-bW-8OJ" customClass="NavigationViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1JO-Ho-ucU">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -185,22 +185,22 @@
             <objects>
                 <viewController id="CzO-j0-P1H" customClass="PostListViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hh6-JB-Jfw">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yNk-3Z-xbX">
-                                <rect key="frame" x="0.0" y="147" width="430" height="751"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postcell" id="4RB-xR-dt1" customClass="PostTableViewCell" customModule="RedditClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="430" height="350"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4RB-xR-dt1" id="VfC-1C-STZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="350"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFa-dO-mny" customClass="PostView" customModule="RedditClient" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="430" height="350"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
@@ -212,7 +212,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postView" destination="eFa-dO-mny" id="8uH-SF-bf9"/>
+                                            <outlet property="postView" destination="eFa-dO-mny" id="DqQ-cw-WQR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -221,13 +221,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/r/ios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7p4-ds-LTc">
-                                <rect key="frame" x="189.33333333333334" y="103" width="51.333333333333343" height="44"/>
+                                <rect key="frame" x="134.5" y="64" width="51" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-SJ-zmr">
-                                <rect key="frame" x="381" y="103" width="44" height="44"/>
+                                <rect key="frame" x="271" y="64" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="nME-MY-wir"/>
                                     <constraint firstAttribute="height" constant="44" id="vOC-44-UtC"/>
@@ -242,7 +242,6 @@
                         <constraints>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerX" secondItem="7Xz-Mw-FSN" secondAttribute="centerX" id="1bh-RX-cLe"/>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerY" secondItem="hkJ-SJ-zmr" secondAttribute="centerY" id="6pC-tE-15Z"/>
-                            <constraint firstItem="hkJ-SJ-zmr" firstAttribute="leading" secondItem="7p4-ds-LTc" secondAttribute="trailing" constant="140.33333333333334" id="NDn-4O-cmK"/>
                             <constraint firstItem="yNk-3Z-xbX" firstAttribute="leading" secondItem="7Xz-Mw-FSN" secondAttribute="leading" id="Ndo-DN-uPH"/>
                             <constraint firstItem="7Xz-Mw-FSN" firstAttribute="trailing" secondItem="yNk-3Z-xbX" secondAttribute="trailing" id="OJT-a7-KBQ"/>
                             <constraint firstItem="7Xz-Mw-FSN" firstAttribute="bottom" secondItem="yNk-3Z-xbX" secondAttribute="bottom" id="Wni-2e-tY1"/>
@@ -268,11 +267,11 @@
             <objects>
                 <viewController id="AxQ-gN-WUu" userLabel="PostDetailsViewController" customClass="PostDetailsViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJK-uv-8nM">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17D-K8-VmJ" customClass="PostView" customModule="RedditClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="103" width="430" height="350"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="XQj-01-Tjb"/>
                                 </constraints>
