@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B18C6402B824525003E1D78 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B18C63F2B824525003E1D78 /* PostView.xib */; };
 		3B18C6442B824A65003E1D78 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B18C6432B824A65003E1D78 /* PostView.swift */; };
+		3B4961CC2B8B77B300B90DB8 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4961CB2B8B77B300B90DB8 /* PostData.swift */; };
+		3B641FD52B8BB6D1002929D2 /* PostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B641FD42B8BB6D1002929D2 /* PostDelegate.swift */; };
 		3B6AC6E62B78DCDF008B1E01 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E52B78DCDF008B1E01 /* PostViewController.swift */; };
 		3B6AC6E82B79556C008B1E01 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E72B79556C008B1E01 /* FetchData.swift */; };
 		3B6AC6EA2B7A682F008B1E01 /* DecodedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AC6E92B7A682F008B1E01 /* DecodedPost.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		3B18C63F2B824525003E1D78 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		3B18C6432B824A65003E1D78 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		3B4961CB2B8B77B300B90DB8 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		3B641FD42B8BB6D1002929D2 /* PostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDelegate.swift; sourceTree = "<group>"; };
 		3B6AC6E52B78DCDF008B1E01 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3B6AC6E72B79556C008B1E01 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		3B6AC6E92B7A682F008B1E01 /* DecodedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodedPost.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				3BFB0CA62B77B28300D0289A /* Assets.xcassets */,
 				3BFB0CA82B77B28300D0289A /* LaunchScreen.storyboard */,
 				3BFB0CAB2B77B28300D0289A /* Info.plist */,
+				3B4961CB2B8B77B300B90DB8 /* PostData.swift */,
+				3B641FD42B8BB6D1002929D2 /* PostDelegate.swift */,
 			);
 			path = RedditClient;
 			sourceTree = "<group>";
@@ -214,8 +220,10 @@
 			files = (
 				3BD3FE732B828B2E007C7D25 /* NavigationControllerViewController.swift in Sources */,
 				3B6AC6EA2B7A682F008B1E01 /* DecodedPost.swift in Sources */,
+				3B641FD52B8BB6D1002929D2 /* PostDelegate.swift in Sources */,
 				3BD3FE762B82A6D5007C7D25 /* PostTableViewCell.swift in Sources */,
 				3B6AC6E62B78DCDF008B1E01 /* PostViewController.swift in Sources */,
+				3B4961CC2B8B77B300B90DB8 /* PostData.swift in Sources */,
 				3B18C6442B824A65003E1D78 /* PostView.swift in Sources */,
 				3BFB0CA22B77B28200D0289A /* ViewController.swift in Sources */,
 				3B6AC6E82B79556C008B1E01 /* FetchData.swift in Sources */,

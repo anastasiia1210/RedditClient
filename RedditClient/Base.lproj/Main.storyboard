@@ -190,7 +190,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yNk-3Z-xbX">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postcell" id="4RB-xR-dt1" customClass="PostTableViewCell" customModule="RedditClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="320" height="350"/>
@@ -235,26 +235,47 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bookmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="filterSavedAction:" destination="CzO-j0-P1H" eventType="touchUpInside" id="N1y-A4-T5l"/>
+                                </connections>
                             </button>
+                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xth-Zt-S8C">
+                                <rect key="frame" x="0.0" y="64" width="270" height="44"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="barTintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CzO-j0-P1H" id="seY-iL-XTL"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Xz-Mw-FSN"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerX" secondItem="7Xz-Mw-FSN" secondAttribute="centerX" id="1bh-RX-cLe"/>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerY" secondItem="hkJ-SJ-zmr" secondAttribute="centerY" id="6pC-tE-15Z"/>
+                            <constraint firstItem="xth-Zt-S8C" firstAttribute="centerY" secondItem="hkJ-SJ-zmr" secondAttribute="centerY" id="H3I-en-4JX"/>
+                            <constraint firstItem="xth-Zt-S8C" firstAttribute="top" secondItem="7Xz-Mw-FSN" secondAttribute="top" id="Kw0-cs-lBp"/>
                             <constraint firstItem="yNk-3Z-xbX" firstAttribute="leading" secondItem="7Xz-Mw-FSN" secondAttribute="leading" id="Ndo-DN-uPH"/>
                             <constraint firstItem="7Xz-Mw-FSN" firstAttribute="trailing" secondItem="yNk-3Z-xbX" secondAttribute="trailing" id="OJT-a7-KBQ"/>
                             <constraint firstItem="7Xz-Mw-FSN" firstAttribute="bottom" secondItem="yNk-3Z-xbX" secondAttribute="bottom" id="Wni-2e-tY1"/>
                             <constraint firstItem="7Xz-Mw-FSN" firstAttribute="trailing" secondItem="hkJ-SJ-zmr" secondAttribute="trailing" constant="5" id="a5B-NG-6Yg"/>
-                            <constraint firstItem="yNk-3Z-xbX" firstAttribute="top" secondItem="7p4-ds-LTc" secondAttribute="bottom" id="bnJ-HM-7XR"/>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="top" secondItem="7Xz-Mw-FSN" secondAttribute="top" id="jqX-c5-wXX"/>
                             <constraint firstItem="hkJ-SJ-zmr" firstAttribute="top" secondItem="7Xz-Mw-FSN" secondAttribute="top" id="p4k-pN-cxp"/>
-                            <constraint firstItem="yNk-3Z-xbX" firstAttribute="top" secondItem="7p4-ds-LTc" secondAttribute="bottom" id="qdO-ac-bgE"/>
+                            <constraint firstItem="hkJ-SJ-zmr" firstAttribute="leading" secondItem="xth-Zt-S8C" secondAttribute="trailing" constant="1" id="q47-l2-Jpl"/>
+                            <constraint firstItem="xth-Zt-S8C" firstAttribute="leading" secondItem="7Xz-Mw-FSN" secondAttribute="leading" id="tez-B0-aFU"/>
+                            <constraint firstItem="yNk-3Z-xbX" firstAttribute="top" secondItem="hkJ-SJ-zmr" secondAttribute="bottom" id="x4R-cy-viK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YlW-ew-i1z"/>
                     <connections>
+                        <outlet property="filterSavedButton" destination="hkJ-SJ-zmr" id="hy5-un-Yhm"/>
+                        <outlet property="headerText" destination="7p4-ds-LTc" id="nds-2U-NE0"/>
+                        <outlet property="mainView" destination="hh6-JB-Jfw" id="ftU-5B-gYW"/>
+                        <outlet property="searchBar" destination="xth-Zt-S8C" id="eMu-63-oFv"/>
                         <outlet property="tableView" destination="yNk-3Z-xbX" id="YjV-58-fuc"/>
+                        <outlet property="view" destination="hh6-JB-Jfw" id="BJ3-z6-aRL"/>
                         <segue destination="AxQ-gN-WUu" kind="show" identifier="detailsPost" id="YR5-4F-tIN"/>
                     </connections>
                 </viewController>

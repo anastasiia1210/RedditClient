@@ -6,6 +6,7 @@ class PostView: UIView {
     let kCONTENT_XIB_NAME = "PostView"
     var url: URL?
     var post: Post?
+    weak var delegate: PostDelegate? 
     
     @IBOutlet var view: UIView!
     @IBOutlet weak var nameTimeDomain: UILabel!
@@ -52,10 +53,22 @@ class PostView: UIView {
     }
     
     @IBAction func savedAction(_ sender: Any) {
-        print(post?.saved)
+        guard let post else {return}
+        if post.saved {
+            PostData.shared.removePostFromSaved(post)
+        } else{
+            PostData.shared.addPostToSaved(post)
+        }
+        var nameIcon = ""
+        if self.post?.saved == true{ nameIcon = ".fill" }
+        let savedImage = UIImage(systemName: "bookmark\(nameIcon)")
+        saved.setImage(savedImage, for: .normal)
+        self.delegate?.changeSaved()
+        print(PostData.shared.savedData.count)
     }
     
-    func configure(_ post: Post){
+    func configure(_ post: Post, _ d: UIViewController){
+        self.delegate = d as? any PostDelegate
         self.post = post
         self.url = URL(string: post.permalink)
         nameTimeDomain.text = "\(post.authorFullname) · 15h · \(post.domain)"

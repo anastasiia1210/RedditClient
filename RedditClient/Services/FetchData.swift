@@ -1,6 +1,6 @@
 import Foundation
 
-struct FetchData{
+class FetchData{
     static let fetchData = FetchData()
     
     func fetchOnePost(subreddit: String, parametrs: [(String, String)]? = nil) async throws -> Post{

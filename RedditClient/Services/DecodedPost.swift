@@ -1,6 +1,6 @@
 import Foundation
 
-struct Post: Codable{
+class Post: Codable{
     var authorFullname: String
     var permalink: String
     var saved: Bool
