@@ -12,6 +12,7 @@ class PostData{
     var onlySavedPosts = false
     
     func addPostToSaved(_ post: Post){
+        if post.saved == true {return}
         post.saved = true
         self.savedData.append(post)
     }
@@ -22,11 +23,9 @@ class PostData{
         if onlySavedPosts {
             self.presentData = self.savedData
         }
-        print(self.presentData)
     }
     func loadPosts(reloadData: @escaping () -> Void){
         print(path.path)
-        print("load Data")
         readPostsFromFile()
         FetchData.fetchData.fetchPosts(subreddit: "ios", parametrs: [("limit", "10")]){
             [weak self] values, valueAfter in

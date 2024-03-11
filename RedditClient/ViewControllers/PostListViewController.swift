@@ -1,6 +1,6 @@
 import UIKit
 
-class PostListViewController: UIViewController, PostDelegate, UISearchBarDelegate {
+class PostListViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var filterSavedButton: UIButton!
@@ -10,21 +10,13 @@ class PostListViewController: UIViewController, PostDelegate, UISearchBarDelegat
     let identifierForDetails = "detailsPost"
     var lastSelected: Post?
     
-    func changeSaved() {
-        guard let text = searchBar.text else {return}
-        if PostData.shared.onlySavedPosts && !text.isEmpty{
-            PostData.shared.presentData = PostData.shared.savedData.filter({$0.title.lowercased().contains(text.lowercased())})
-        }
-        self.tableView.reloadData()
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange: String) {
         if textDidChange.isEmpty{ PostData.shared.presentData = PostData.shared.savedData }else{
             PostData.shared.presentData = PostData.shared.savedData.filter({$0.title.lowercased().contains(textDidChange.lowercased())})}
-            self.tableView.reloadData()
-       }
+        self.tableView.reloadData()
+    }
     
-
+    
     @IBOutlet private weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +30,20 @@ class PostListViewController: UIViewController, PostDelegate, UISearchBarDelegat
         self.tableView.keyboardDismissMode = .onDrag
     }
     
-    override func prepare(
-        for segue: UIStoryboardSegue,
-        sender: Any?
-    ) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case self.identifierForDetails:
             let nextVc = segue.destination as! PostDetailsViewController
             DispatchQueue.main.async {
                 guard let lastSelected = self.lastSelected else {return}
-                nextVc.config(lastSelected, self)
+                nextVc.destinationViewController = self
+                nextVc.post = lastSelected
             }
-
+            
         default: break
         }
     }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !PostData.shared.onlySavedPosts{
@@ -83,7 +74,7 @@ class PostListViewController: UIViewController, PostDelegate, UISearchBarDelegat
     
 }
 
-extension PostListViewController: UITableViewDelegate, UITableViewDataSource{
+extension PostListViewController: UITableViewDelegate, UITableViewDataSource, PostDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PostData.shared.presentData.count
@@ -95,15 +86,23 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
-    ) {
-        self.lastSelected = PostData.shared.presentData[indexPath.row]
+    func commentsClicked(_ post: Post) {
+        self.lastSelected = post
         self.performSegue(
             withIdentifier: self.identifierForDetails,
             sender: nil
         )
     }
     
+    func changeSaved() {
+        guard let text = searchBar.text else {return}
+        if PostData.shared.onlySavedPosts && !text.isEmpty{
+            PostData.shared.presentData = PostData.shared.savedData.filter({$0.title.lowercased().contains(text.lowercased())})
+        }
+        self.tableView.reloadData()
+    }
+    
+    func refreshTable(){
+        self.tableView.reloadData()
+    }
 }

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostView" customModule="RedditClient" customModuleProvider="target">
             <connections>
+                <outlet property="bookmarkHidenView" destination="mRv-W8-pfK" id="K21-ju-o5S"/>
                 <outlet property="comments" destination="Lrn-TV-42n" id="5ie-oL-eIS"/>
                 <outlet property="imageView" destination="sZF-jj-dCX" id="nxS-6f-0KT"/>
                 <outlet property="nameTimeDomain" destination="fx6-yN-9QO" id="v9b-pY-Jx7"/>
@@ -77,6 +78,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="85">
                                 <imageReference key="image" image="bubble.fill" catalog="system" symbolScale="default"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="commentsAction:" destination="-1" eventType="touchUpInside" id="BgN-Yf-zPA"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15P-Tc-iR6">
                             <rect key="frame" x="286.66666666666669" y="0.0" width="143.33333333333331" height="44"/>
@@ -101,12 +105,17 @@
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="Wzd-bU-UQw"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRv-W8-pfK">
+                    <rect key="frame" x="0.0" y="63" width="430" height="243"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sZF-jj-dCX" secondAttribute="trailing" id="1Vk-oY-IBD"/>
                 <constraint firstItem="sZF-jj-dCX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2j5-M9-Kca"/>
+                <constraint firstItem="mRv-W8-pfK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8Wd-eg-bbJ"/>
                 <constraint firstItem="1WQ-Zb-30e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="9q1-fo-Vwc"/>
                 <constraint firstItem="sZF-jj-dCX" firstAttribute="top" secondItem="1WQ-Zb-30e" secondAttribute="bottom" constant="3" id="9vZ-Cp-6m8"/>
                 <constraint firstAttribute="trailing" secondItem="fwd-mi-PPj" secondAttribute="trailing" id="GG4-38-5E2"/>
@@ -115,12 +124,15 @@
                 <constraint firstItem="fx6-yN-9QO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="NrM-RD-eBy"/>
                 <constraint firstItem="V6I-h3-jde" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="V51-Ux-iuJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1WQ-Zb-30e" secondAttribute="trailing" constant="5" id="YDl-5P-rfh"/>
+                <constraint firstItem="mRv-W8-pfK" firstAttribute="top" secondItem="1WQ-Zb-30e" secondAttribute="bottom" id="auI-i6-U6b"/>
                 <constraint firstItem="1WQ-Zb-30e" firstAttribute="top" secondItem="fx6-yN-9QO" secondAttribute="bottom" id="bGG-05-W72"/>
                 <constraint firstItem="fwd-mi-PPj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gRu-8j-cKr"/>
                 <constraint firstItem="fwd-mi-PPj" firstAttribute="centerY" secondItem="fx6-yN-9QO" secondAttribute="centerY" id="ipJ-N5-TKn"/>
                 <constraint firstAttribute="bottom" secondItem="V6I-h3-jde" secondAttribute="bottom" id="p2B-68-GuR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V6I-h3-jde" secondAttribute="trailing" id="p8H-Vi-DPq"/>
                 <constraint firstItem="fx6-yN-9QO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="pI8-6k-zRs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mRv-W8-pfK" secondAttribute="trailing" id="qRK-ey-vQO"/>
+                <constraint firstItem="V6I-h3-jde" firstAttribute="top" secondItem="mRv-W8-pfK" secondAttribute="bottom" id="qlN-lR-utt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="47.441860465116278" y="19.95708154506438"/>
@@ -135,7 +147,10 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
