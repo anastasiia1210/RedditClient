@@ -9,6 +9,7 @@ class Post: Codable{
     var domain: String
     var numComments: Int
     var image: String //url of image
+    var created: Int
     
     init(from decoded: DecodedPost) throws {
         self.authorFullname = decoded.data.children.first?.data.authorFullname ?? ""
@@ -19,6 +20,7 @@ class Post: Codable{
         self.ups = decoded.data.children.first?.data.ups ?? 0
         self.domain = decoded.data.children.first?.data.domain ?? ""
         self.numComments = decoded.data.children.first?.data.numComments ?? 0
+        self.created = decoded.data.children.first?.data.created ?? 0
         if let imageUrl = decoded.data.children.first?.data.preview?.images.first?.source.url {
             self.image = imageUrl.replacingOccurrences(of: "&amp;", with: "&")
         } else {self.image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1280px-Placeholder_view_vector.svg.png"} //default image, no image in post
@@ -33,6 +35,7 @@ class Post: Codable{
         self.ups = child.data.ups ?? 0
         self.domain = child.data.domain ?? "hidden domain"
         self.numComments = child.data.numComments ?? 0
+        self.created = child.data.created ?? 0
         if let imageUrl = child.data.preview?.images.first?.source.url {
             self.image = imageUrl.replacingOccurrences(of: "&amp;", with: "&")
         } else {self.image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1280px-Placeholder_view_vector.svg.png"} //default image, no image in post
@@ -61,6 +64,7 @@ struct ChildData: Codable {
     let domain: String?
     let preview: Preview?
     let numComments: Int?
+    let created: Int?
 }
 
 struct Preview: Codable {

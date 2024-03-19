@@ -76,10 +76,11 @@ class PostView: UIView {
     }
     
     func configure(_ post: Post, _ d: UIViewController){
+        let time = calculateTime(post.created)
         self.delegate = d as? any PostDelegate
         self.post = post
         self.url = URL(string: post.permalink)
-        nameTimeDomain.text = "\(post.authorFullname) · 15h · \(post.domain)"
+        nameTimeDomain.text = "\(post.authorFullname) · \(time) · \(post.domain)"
         titleText.text = post.title
         rating.setTitle("\(post.ups + post.downs)", for: .normal)
         comments.setTitle("\(post.numComments)", for: .normal)
@@ -94,6 +95,16 @@ class PostView: UIView {
         DispatchQueue.main.async {
             self.drawBookmark()
         }
+    }
+    
+    func calculateTime(_ created: Int) -> String{
+       let timeDiff = Int(NSDate().timeIntervalSince1970) - created
+        if timeDiff < 60 {return "now"}
+        if timeDiff < 3600 {return "\(Int(timeDiff/60))m"}
+        if timeDiff < 86400 {return "\(Int(timeDiff/3600))h"}
+        if timeDiff < 2678400 {return "\(Int(timeDiff/86400))d"}
+        if timeDiff < 31536000 {return "\(Int(timeDiff/2678400))mon"}
+        return "\(Int(timeDiff/31536000))y"
     }
     
     func addGestureRecognizerForDoubleTap(){
