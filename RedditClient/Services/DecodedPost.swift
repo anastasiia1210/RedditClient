@@ -1,6 +1,7 @@
 import Foundation
 
 class Post: Codable{
+    var id: String
     var authorFullname: String
     var permalink: String
     var saved: Bool
@@ -12,6 +13,7 @@ class Post: Codable{
     var created: Int
     
     init(from decoded: DecodedPost) throws {
+        self.id = decoded.data.children.first?.data.id ?? "none"
         self.authorFullname = decoded.data.children.first?.data.authorFullname ?? ""
         self.permalink = "https://www.reddit.com/\(decoded.data.children.first?.data.permalink ?? "")"
         self.saved = decoded.data.children.first?.data.saved ?? false
@@ -27,6 +29,7 @@ class Post: Codable{
     }
     
     init(from child: Child) throws {
+        self.id = child.data.id ?? "none"
         self.authorFullname = child.data.authorFullname ?? "Hidden user"
         self.permalink = "https://www.reddit.com/\(child.data.permalink ?? "")"
         self.saved = child.data.saved ?? false
@@ -56,6 +59,7 @@ struct Child: Codable {
 }
 
 struct ChildData: Codable {
+    let id: String?
     let authorFullname: String?
     let permalink: String?
     let saved: Bool?

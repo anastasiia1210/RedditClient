@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7u-bW-8OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7u-bW-8OJ">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -190,7 +190,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yNk-3Z-xbX">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postcell" id="4RB-xR-dt1" customClass="PostTableViewCell" customModule="RedditClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="320" height="350"/>
@@ -228,6 +228,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-SJ-zmr">
                                 <rect key="frame" x="271" y="64" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="nME-MY-wir"/>
                                     <constraint firstAttribute="height" constant="44" id="vOC-44-UtC"/>
@@ -241,9 +242,9 @@
                             </button>
                             <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xth-Zt-S8C">
                                 <rect key="frame" x="0.0" y="64" width="270" height="44"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
-                                <color key="barTintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="CzO-j0-P1H" id="seY-iL-XTL"/>
@@ -251,7 +252,8 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Xz-Mw-FSN"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerX" secondItem="7Xz-Mw-FSN" secondAttribute="centerX" id="1bh-RX-cLe"/>
                             <constraint firstItem="7p4-ds-LTc" firstAttribute="centerY" secondItem="hkJ-SJ-zmr" secondAttribute="centerY" id="6pC-tE-15Z"/>
@@ -297,17 +299,26 @@
                                     <constraint firstAttribute="height" constant="350" id="XQj-01-Tjb"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-bd-qXy" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="414" width="320" height="154"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VHN-Y8-dJ3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="17D-K8-VmJ" firstAttribute="leading" secondItem="VHN-Y8-dJ3" secondAttribute="leading" id="G6v-UD-RCp"/>
+                            <constraint firstItem="Z2f-bd-qXy" firstAttribute="top" secondItem="17D-K8-VmJ" secondAttribute="bottom" id="J2o-D6-8yE"/>
+                            <constraint firstItem="Z2f-bd-qXy" firstAttribute="leading" secondItem="VHN-Y8-dJ3" secondAttribute="leading" id="KMI-GN-rRM"/>
                             <constraint firstItem="17D-K8-VmJ" firstAttribute="top" secondItem="VHN-Y8-dJ3" secondAttribute="top" id="Lhn-nf-ilu"/>
+                            <constraint firstItem="Z2f-bd-qXy" firstAttribute="bottom" secondItem="VHN-Y8-dJ3" secondAttribute="bottom" id="P0X-cM-tNK"/>
                             <constraint firstItem="VHN-Y8-dJ3" firstAttribute="trailing" secondItem="17D-K8-VmJ" secondAttribute="trailing" id="Z9G-L1-IBl"/>
+                            <constraint firstItem="VHN-Y8-dJ3" firstAttribute="trailing" secondItem="Z2f-bd-qXy" secondAttribute="trailing" id="d5l-c5-dib"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1SW-g1-cha"/>
                     <connections>
+                        <outlet property="containerView" destination="Z2f-bd-qXy" id="MdW-29-2TK"/>
                         <outlet property="postView" destination="17D-K8-VmJ" id="PA3-1P-vJi"/>
                     </connections>
                 </viewController>
@@ -322,9 +333,6 @@
         <image name="bookmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="bubble.fill" catalog="system" width="128" height="110"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -336,6 +344,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

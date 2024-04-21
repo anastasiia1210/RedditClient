@@ -61,4 +61,37 @@ class FetchData{
         
         task.resume()
     }
+    
+    func fetchComments(subreddit: String, postId: String, completion: @escaping ([Comment]) -> Void) {
+        guard let url = URL(string: "https://www.reddit.com/r/\(subreddit)/comments/\(postId)/.json") else { return }
+      
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+            do {
+                guard let data = data else { return }
+                let decodedComments: [Comment]
+                
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let decoded = try decoder.decode([DecodedComment].self, from: data)
+                decodedComments = try decoded[1].data.children.map { try Comment(from: $0) }
+                
+                completion(decodedComments)
+            } catch {
+                print("Error fetching comments: \(error)")
+                completion([])
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func calculateTime(_ created: Int) -> String{
+       let timeDiff = Int(NSDate().timeIntervalSince1970) - created
+        if timeDiff < 60 {return "now"}
+        if timeDiff < 3600 {return "\(Int(timeDiff/60))m"}
+        if timeDiff < 86400 {return "\(Int(timeDiff/3600))h"}
+        if timeDiff < 2678400 {return "\(Int(timeDiff/86400))d"}
+        if timeDiff < 31536000 {return "\(Int(timeDiff/2678400))mon"}
+        return "\(Int(timeDiff/31536000))y"
+    }
 }
