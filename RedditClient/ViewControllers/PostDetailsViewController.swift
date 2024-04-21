@@ -5,8 +5,8 @@ class PostDetailsViewController: UIViewController{
     
     var post: Post?
     var destinationViewController: UIViewController?
-    @IBOutlet weak var postView: PostView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet private weak var postView: PostView!
+    @IBOutlet private weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

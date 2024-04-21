@@ -2,16 +2,19 @@ import UIKit
 
 class PostListViewController: UIViewController, UISearchBarDelegate {
     
-    @IBOutlet var mainView: UIView!
-    @IBOutlet weak var filterSavedButton: UIButton!
-    @IBOutlet weak var headerText: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private var mainView: UIView!
+    @IBOutlet private weak var filterSavedButton: UIButton!
+    @IBOutlet private weak var headerText: UILabel!
+    @IBOutlet private weak var searchBar: UISearchBar!
     let identifier = "postcell"
     let identifierForDetails = "detailsPost"
     var lastSelected: Post?
     
     func searchBar(_ searchBar: UISearchBar, textDidChange: String) {
-        if textDidChange.isEmpty{ PostData.shared.presentData = PostData.shared.savedData }else{
+        if textDidChange.isEmpty{ 
+            PostData.shared.presentData = PostData.shared.savedData
+            self.searchBar.resignFirstResponder()
+        }else{
             PostData.shared.presentData = PostData.shared.savedData.filter({$0.title.lowercased().contains(textDidChange.lowercased())})}
         self.tableView.reloadData()
     }
@@ -34,11 +37,9 @@ class PostListViewController: UIViewController, UISearchBarDelegate {
         switch segue.identifier {
         case self.identifierForDetails:
             let nextVc = segue.destination as! PostDetailsViewController
-            DispatchQueue.main.async {
                 guard let lastSelected = self.lastSelected else {return}
                 nextVc.destinationViewController = self
                 nextVc.post = lastSelected
-            }
             
         default: break
         }
@@ -55,11 +56,12 @@ class PostListViewController: UIViewController, UISearchBarDelegate {
             }
         }
     }
-    @IBAction func filterSavedAction(_ sender: Any) {
+    @IBAction private func filterSavedAction(_ sender: Any) {
         PostData.shared.onlySavedPosts = !PostData.shared.onlySavedPosts
         if PostData.shared.onlySavedPosts{
             PostData.shared.presentData = PostData.shared.savedData
         }else{
+            self.searchBar.resignFirstResponder()
             PostData.shared.presentData = PostData.shared.data
         }
         var nameIcon = ""

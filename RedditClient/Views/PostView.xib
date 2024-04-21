@@ -102,7 +102,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZF-jj-dCX">
                     <rect key="frame" x="0.0" y="66" width="430" height="240"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="Wzd-bU-UQw"/>
+                        <constraint firstAttribute="height" constant="240" id="Wzd-bU-UQw"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRv-W8-pfK">

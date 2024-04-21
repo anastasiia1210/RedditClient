@@ -8,14 +8,14 @@ class PostView: UIView {
     var post: Post?
     weak var delegate: PostDelegate?
     
-    @IBOutlet weak var bookmarkHidenView: UIView!
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var nameTimeDomain: UILabel!
-    @IBOutlet weak var titleText: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var rating: UIButton!
+    @IBOutlet private weak var bookmarkHidenView: UIView!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var nameTimeDomain: UILabel!
+    @IBOutlet private weak var titleText: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var rating: UIButton!
     @IBOutlet weak var comments: UIButton!
-    @IBOutlet weak var saved: UIButton!
+    @IBOutlet private weak var saved: UIButton!
     
     required init?(coder: NSCoder){
         super.init(coder: coder)

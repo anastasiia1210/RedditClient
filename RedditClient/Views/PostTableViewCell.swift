@@ -2,7 +2,7 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var postView: PostView!
+    @IBOutlet private weak var postView: PostView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
